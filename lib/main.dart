@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'login.dart';
 import 'shared_styles.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  
+  await Supabase.initialize(
+    url: 'https://jucurerlhqjdtglbwkhw.supabase.co',
+    anonKey: 'sb_publishable_-0dSYiZ2Wsf8md8LJN5GtQ_1lRq0mR5',
+  );
+
   runApp(const GoogleStoreApp());
 }
 
